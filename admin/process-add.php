@@ -29,12 +29,12 @@
         {
             $_SESSION['add']="<div class='text-success'>Thêm nhân viên thành công.</div>";
 
-            header('location:88' .SITEURL. 'admin/index.php');
+            header('location:' .SITEURL. 'admin/index.php');
         }
         else
         {
             $_SESSION['add']="<div class='text-danger'>Thêm nhân viên thất bại.</div>";
-            header('location:88' .SITEURL. 'admin/index.php');
+            header('location:' .SITEURL. 'admin/index.php');
 
         }
 

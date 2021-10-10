@@ -136,12 +136,12 @@ ob_start();
         if($query==TRUE)
         {
             $_SESSION['update-qldv']="<div class='text-success'>Sửa nhân viên thành công.</div>";
-            header('location:88 http://localhost/dhtl3/admin/qldv.php');
+            header('location: http://localhost:88/dhtl3/admin/qldv.php');
         }
         else
         {
             $_SESSION['update-qldv']="<div class='text-danger'>Sửa nhân viên thất bại.</div>";
-            header('location:88 http://localhost/dhtl3/admin/qldv.php');
+            header('location: http://localhost:88/dhtl3/admin/qldv.php');
         }
    }
 ?>

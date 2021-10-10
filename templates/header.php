@@ -31,11 +31,7 @@ include('config/constants.php')
                         <li class="nav-item">
                           <a class="nav-link active" aria-current="page" href="http://localhost:88/dhtl3/qldv.php">Quản lý Đơn Vị</a>
                         </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="#">Quản lý tài khoản</a>
-                        </li>
                       </ul>
-
                     </div>
                   </div>
                 </nav>

@@ -1,9 +1,9 @@
 <?php
-session_start();
 
-if(isset($_SESSION['login'])){
+
+
     unset($_SESSION['login']);
-    header("Location:88 login.php");
-}
+    header("Location: http://localhost:88/dhtl3/admin/login.php");
+
 
 ?>

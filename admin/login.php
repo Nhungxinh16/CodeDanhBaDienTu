@@ -13,7 +13,7 @@ include_once('templates-admin/header-login.php');
                     <h2 class="text-center fw-bold">Đăng Nhập</h3>
 
                     <!-- form -->
-                    <form action="" method="post">
+                    <form action="" method="POST">
 
                         <!-- Email input -->
                         <div class="form-outline mb-4">
@@ -94,21 +94,21 @@ include_once('templates-admin/header-login.php');
                 
               
                 $_SESSION['login']= "<div class='text-success'>Đăng nhập thành công.</div>";
-                header("Location:88".SITEURL."index.php");
+                header("Location:".SITEURL."admin/index.php");
             }
             elseif($row['STATUS']==0){
                 $_SESSION['login']="<div class='text-danger'>Tài khoản chưa được kích hoạt</div>";
-                header("Location:88".SITEURL."login.php");
+                header("Location:".SITEURL."login.php");
             }
             
             else{
                 $_SESSION['login']="<div class='text-danger'>Sai mật khẩu</div>";
-                header("Location:88".SITEURL."login.php");
+                header("Location:".SITEURL."login.php");
             }
         }
         else{
             $_SESSION['login']="<div class='text-danger'>Sai Email</div>";
-            header("Location:88".SITEURL."login.php");
+            header("Location:".SITEURL."login.php");
 
         }
 

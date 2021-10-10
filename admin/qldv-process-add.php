@@ -24,12 +24,12 @@
         if($query==TRUE )
         {
             $_SESSION['add-qldv']="<div class='text-success'>Thêm đơn vị thành công.</div>";
-            header('location:88' .SITEURL. 'admin/qldv.php');
+            header('location:' .SITEURL. 'admin/qldv.php');
         }
         else
         {
             $_SESSION['add-qldv']="<div class='text-danger'>Thêm đơn vị thất bại.</div>";
-            header('location:88' .SITEURL. 'admin/qldv.php');
+            header('location:' .SITEURL. 'admin/qldv.php');
         }
     }
 ?>

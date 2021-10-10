@@ -22,7 +22,7 @@ include('templates-admin/header.php');
     else
     {
         $_SESSION['delete-qldv']="<div class='text-danger'>Xóa đơn vị thất bại.</div>";
-        header('location:88' .SITEURL. 'admin/qldv.php');
+        header('location:' .SITEURL. 'admin/qldv.php');
     
     }
 ?>
