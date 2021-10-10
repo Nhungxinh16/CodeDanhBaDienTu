@@ -16,13 +16,13 @@ include('templates-admin/header.php');
     if($res==true)
     {           
         $_SESSION['delete-qldv']="<div class='text-success'>Xóa đơn vị thành công.</div>";
-        header('location:' .SITEURL. 'admin/qldv.php');
+        header('location:qldv.php');
 
     }
     else
     {
         $_SESSION['delete-qldv']="<div class='text-danger'>Xóa đơn vị thất bại.</div>";
-        header('location:' .SITEURL. 'admin/qldv.php');
+        header('location:qldv.php');
     
     }
 ?>

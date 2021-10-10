@@ -1,5 +1,8 @@
 <?php
-include('../config/constants.php')
+  include('../config/constants.php');
+  if(!isset($_SESSION["login_success"])){
+    header("Location: login.php");
+  }
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +22,7 @@ include('../config/constants.php')
               <div class="col-md-12">
               <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
                   <div class="container-fluid">
-                    <a class="btn btn-success m-2" href="http://localhost:88/dhtl3/admin/" role="button"><i class="bi bi-house"></i></a>
+                    <a class="btn btn-success m-2" href="index.php" role="button"><i class="bi bi-house"></i></a>
                     
                       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" >
                         <span class="navbar-toggler-icon"></span>
@@ -30,7 +33,7 @@ include('../config/constants.php')
                           <a class="nav-link active " href="index.php">Quản lý người dùng</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link active" aria-current="page" href="http://localhost:88/dhtl3/admin/qldv.php">Quản lý Đơn Vị</a>
+                          <a class="nav-link active" aria-current="page" href="qldv.php">Quản lý Đơn Vị</a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" href="#">Quản lý tài khoản</a>
@@ -38,7 +41,7 @@ include('../config/constants.php')
 
                         
                         <li class="nav-item">
-                          <a class="nav-link" href="http://localhost:88/dhtl3/admin/logout.php" tabindex="-1" aria-disabled="true">Đăng Xuất</a>
+                          <a class="nav-link" href="logout.php" tabindex="-1" aria-disabled="true">Đăng Xuất</a>
                         </li>
                       </ul>
                       <form class="d-flex">

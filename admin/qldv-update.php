@@ -6,6 +6,14 @@ include('templates-admin/header.php');
     <div class="wrapper">
         <div class="alert alert-success text-center" role="alert">
             <h2>Sửa</h2>
+            <div class="text-center text-danger">
+                <?php
+                    if(isset($_SESSION['add_error'])){
+                        echo $_SESSION['add_error'];
+                        unset ($_SESSION['add_error']);
+                    }
+                ?>
+            </div>
         </div>
 
         <!-- sửa -->
@@ -111,7 +119,7 @@ include('templates-admin/header.php');
 ?>
 
 <?php
-ob_start();
+    ob_start();
    if(isset ($_POST['update']))
    {  
         $tendonvi = $_POST['txtdonvi'];
@@ -121,27 +129,32 @@ ob_start();
         $website = $_POST['txtwebsite'];
         $madvCha = $_POST['dvcha'];
 
-        //lệnh truy vấn sql để update
-        $sql = "UPDATE db_donvi SET
-        tendv = '$tendonvi',
-        diachi = '$diachi',
-        dienthoai = '$sdt',
-        email = '$email',
-        website = '$website',
-        madv_cha = $madvCha WHERE madv = $madv";
+        if($tendonvi == NULL || $diachi == NULL || $email == NULL || $sdt == NULL || $website == NULL){
+            $_SESSION["add_error"] = "Hãy nhập đủ thông tin";
+            header("Location: qldv-update.php?madv=$madv");
+        }else{
+            //lệnh truy vấn sql để update
+            $sql = "UPDATE db_donvi SET
+            tendv = '$tendonvi',
+            diachi = '$diachi',
+            dienthoai = '$sdt',
+            email = '$email',
+            website = '$website',
+            madv_cha = $madvCha WHERE madv = $madv";
 
-        //thưc hiện truy vấn đối vs csdl
-        $query = mysqli_query($conn, $sql); 
+            //thưc hiện truy vấn đối vs csdl
+            $query = mysqli_query($conn, $sql); 
 
-        if($query==TRUE)
-        {
-            $_SESSION['update-qldv']="<div class='text-success'>Sửa nhân viên thành công.</div>";
-            header('location: http://localhost:88/dhtl3/admin/qldv.php');
-        }
-        else
-        {
-            $_SESSION['update-qldv']="<div class='text-danger'>Sửa nhân viên thất bại.</div>";
-            header('location: http://localhost:88/dhtl3/admin/qldv.php');
+            if($query==TRUE)
+            {
+                $_SESSION['update-qldv']="<div class='text-success'>Sửa nhân viên thành công.</div>";
+                header('location: qldv.php');
+            }
+            else
+            {
+                $_SESSION['update-qldv']="<div class='text-danger'>Sửa nhân viên thất bại.</div>";
+                header('location: qldv.php');
+            }
         }
    }
 ?>

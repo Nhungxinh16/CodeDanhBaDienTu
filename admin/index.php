@@ -7,7 +7,6 @@ include('templates-admin/header.php')
           if(isset($_SESSION['add']))
             {
               echo $_SESSION['add'];
-
               //xóa session add
               unset($_SESSION['add']);
             }
@@ -69,8 +68,8 @@ include('templates-admin/header.php')
                           <td><?php echo $row['email']; ?></td>
                           <td><?php echo $row['sodidong']; ?></td>
                           <td><?php echo $row['tendv']; ?></td>
-                          <td><a href="http://localhost:88/dhtl3/admin/sua.php?manv=<?php echo $row['manv'];?>"><i class="bi bi-pencil-square"></i></a></td>
-                          <td><a href="http://localhost:88/dhtl3/admin/xoa.php?manv=<?php echo $row['manv'];?>"><i class="bi bi-trash"></i></i></a></td>
+                          <td><a href="sua.php?manv=<?php echo $row['manv'];?>"><i class="bi bi-pencil-square"></i></a></td>
+                          <td><a href="xoa.php?manv=<?php echo $row['manv'];?>"><i class="bi bi-trash"></i></i></a></td>
                             
                         </tr>
                     <?php

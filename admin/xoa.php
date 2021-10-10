@@ -16,18 +16,15 @@ include('templates-admin/header.php');
     if($res==true)
     {           
         $_SESSION['delete']="<div class='text-success'>Xóa nhân viên thanh công.</div>";
-        header('location:' .SITEURL. 'admin/index.php');
-
+        header('location: index.php');
     }
     else
     {
         $_SESSION['delete']="<div class='text-danger'>Xóa nhân viên thất bại.</div>";
-        header('location:' .SITEURL. 'admin/index.php');
-  
+        header('location: index.php');
     }
 
 ?>
-
 <?php 
     include('templates-admin/footer.php');
 ?>

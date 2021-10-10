@@ -8,13 +8,20 @@ $_SESSION['manv'] = $_GET['manv'];
     <div class="wrapper">
         <div class="alert alert-success text-center" role="alert">
             <h2>Sửa</h2>
+            <div class="text-center text-danger">
+                <?php
+                    if(isset($_SESSION['add_error'])){
+                        echo $_SESSION['add_error'];
+                        unset ($_SESSION['add_error']);
+                    }
+                ?>
+            </div>
         </div>
 
         <!-- sửa -->
         <div class="container">
             <?php
             #connect
-
             #b2; lay ma nv
                 if(isset($_GET['manv']))
                 {

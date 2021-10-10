@@ -1,5 +1,8 @@
 <?php
-include('../config/constants.php')
+    include('../config/constants.php');
+    if(isset($_SESSION["login_success"])){
+        header("location: index.php");
+    }
 ?>
 
 <!DOCTYPE html>

@@ -8,28 +8,34 @@
         $madvCha = $_POST['dvcha'];
 
         require("../config/constants.php");
+        if($tendonvi == NULL || $diachi == NULL || $email == NULL || $sdt == NULL || $website == NULL){
+            $_SESSION["add_error"] = "Hãy nhập đủ thông tin";
+            header("Location: qldv-add.php");
+        }else{
+            //lệnh sql
+            $sql="INSERT INTO db_donvi SET 
+            tendv = '$tendonvi',
+            diachi = '$diachi',
+            dienthoai = '$sdt',
+            email = '$email',
+            website = '$website',
+            madv_cha = $madvCha ";
 
-        //lệnh sql
-        $sql="INSERT INTO db_donvi SET 
-        tendv = '$tendonvi',
-        diachi = '$diachi',
-        dienthoai = '$sdt',
-        email = '$email',
-        website = '$website',
-        madv_cha = $madvCha ";
+            $query = mysqli_query($conn,$sql);
 
-        $query = mysqli_query($conn,$sql);
-
-        //4. Check whether the (Query is Executed) data is inserted or not and display appropriate message
-        if($query==TRUE )
-        {
-            $_SESSION['add-qldv']="<div class='text-success'>Thêm đơn vị thành công.</div>";
-            header('location:' .SITEURL. 'admin/qldv.php');
+            //4. Check whether the (Query is Executed) data is inserted or not and display appropriate message
+            if($query==TRUE )
+            {
+                $_SESSION['add-qldv']="<div class='text-success'>Thêm đơn vị thành công.</div>";
+                header('location:' .SITEURL. 'admin/qldv.php');
+            }
+            else
+            {
+                $_SESSION['add-qldv']="<div class='text-danger'>Thêm đơn vị thất bại.</div>";
+                header('location:' .SITEURL. 'admin/qldv.php');
+            }
+            
         }
-        else
-        {
-            $_SESSION['add-qldv']="<div class='text-danger'>Thêm đơn vị thất bại.</div>";
-            header('location:' .SITEURL. 'admin/qldv.php');
-        }
+        
     }
 ?>

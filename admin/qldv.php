@@ -64,8 +64,8 @@ include('templates-admin/header.php')
                         <td><?php echo $row['email']; ?></td>
                         <td><?php echo $row['website']; ?></td>
                         <td><?php echo $row['TenDV_Cha']; ?></td>
-                        <td><a href="http://localhost:88/dhtl3/admin/qldv-update.php?madv=<?php echo $row['madv'];?>"><i class="bi bi-pencil-square"></i></a></td>
-                        <td><a href="http://localhost:88/dhtl3/admin/qldv-delete.php?madv=<?php echo $row['madv'];?>"><i class="bi bi-trash"></i></i></a></td>
+                        <td><a href="qldv-update.php?madv=<?php echo $row['madv'];?>"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a href="qldv-delete.php?madv=<?php echo $row['madv'];?>"><i class="bi bi-trash"></i></i></a></td>
                                                     
                     </tr>
                 <?php

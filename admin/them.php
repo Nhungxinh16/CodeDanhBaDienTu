@@ -6,8 +6,15 @@ include('templates-admin/header.php');
     <div class="wrapper">
         <div class="alert alert-success text-center" role="alert">
             <h2>Thêm</h2>
+            <div class="text-center text-danger">
+                <?php
+                    if(isset($_SESSION['add_error'])){
+                        echo $_SESSION['add_error'];
+                        unset ($_SESSION['add_error']);
+                    }
+                ?>
+            </div>
         </div>
-
   <!-- sửa -->
         <div class="container col-md-12 mx-auto">
             <form action="process-add.php" METHOD="POST">

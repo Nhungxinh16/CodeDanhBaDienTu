@@ -12,31 +12,36 @@
 
         //kết nối database
         require("../config/constants.php");
+        if($tenNV == NULL || $chucvu == NULL || $email == NULL || $sodidong == NULL || $madv == NULL){
+            $_SESSION["add_error"] = "Hãy nhập đủ thông tin";
+            header("Location: them.php");
+        }else{
+            //lệnh sql
+            $sql="INSERT INTO db_nhanvien SET 
+            tennv = '$tenNV',
+            chucvu = '$chucvu',
+            mayban = '$mayban',
+            email = '$email',
+            sodidong = '$sodidong',
+            madv = '$madv' ";
 
-        //lệnh sql
-        $sql="INSERT INTO db_nhanvien SET 
-        tennv = '$tenNV',
-        chucvu = '$chucvu',
-        mayban = '$mayban',
-        email = '$email',
-        sodidong = '$sodidong',
-        madv = '$madv' ";
- 
-        $query = mysqli_query($conn,$sql) or die(mysqli_error());
+            $query = mysqli_query($conn,$sql) or die(mysqli_error());
 
-        //4. Check whether the (Query is Executed) data is inserted or not and display appropriate message
-        if($query==TRUE)
-        {
-            $_SESSION['add']="<div class='text-success'>Thêm nhân viên thành công.</div>";
+            //4. Check whether the (Query is Executed) data is inserted or not and display appropriate message
+            if($query==TRUE)
+            {
+                $_SESSION['add']="<div class='text-success'>Thêm nhân viên thành công.</div>";
 
-            header('location:' .SITEURL. 'admin/index.php');
+                header('location:index.php');
+            }
+            else
+            {
+                $_SESSION['add']="<div class='text-danger'>Thêm nhân viên thất bại.</div>";
+                header('location:index.php');
+
+            }
         }
-        else
-        {
-            $_SESSION['add']="<div class='text-danger'>Thêm nhân viên thất bại.</div>";
-            header('location:' .SITEURL. 'admin/index.php');
-
-        }
+        
 
     }
 ?>

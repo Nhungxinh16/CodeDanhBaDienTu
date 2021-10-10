@@ -19,7 +19,7 @@ include('config/constants.php')
               <div class="col-md-12">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
                   <div class="container-fluid">
-                    <a class="btn btn-success m-2" href="http://localhost:88/dhtl3/" role="button"><i class="bi bi-house"></i></a>
+                    <a class="btn btn-success m-2" href="index.php" role="button"><i class="bi bi-house"></i></a>
                       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                       </button>
@@ -29,7 +29,7 @@ include('config/constants.php')
                           <a class="nav-link active " href="index.php">Quản lý người dùng</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link active" aria-current="page" href="http://localhost:88/dhtl3/qldv.php">Quản lý Đơn Vị</a>
+                          <a class="nav-link active" aria-current="page" href="qldv.php">Quản lý Đơn Vị</a>
                         </li>
                       </ul>
                     </div>
@@ -44,5 +44,4 @@ include('config/constants.php')
                   <button class="btn btn-success" name="search" type="submit">Search</button>
                 </form>
               </div>
-              
             </div>
