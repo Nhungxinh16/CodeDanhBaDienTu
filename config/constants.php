@@ -4,7 +4,7 @@
     session_start();
 
     //Create Constants to Store Non Repeating Values
-    define('SITEURL', 'http://localhost:88/dhtl3/');
+    define('SITEURL', 'http://localhost:88/CODEDANHBADIENTU/');
 
     define('LOCALHOST', 'localhost');
     define('DB_USERNAME', 'root');

@@ -79,7 +79,9 @@
                     //nếu khớp thì > login thành công > chuyenr vào trang index
                     //cấp thẻ bài
                     $_SESSION['login_success'] = "true";
+                    $_SESSION["user"] = $email;
                     header("Location: index.php");
+
                 }
                 elseif($row['STATUS']==0){
                     $_SESSION['login']="<div class='text-danger'>Tài khoản chưa được kích hoạt</div>";

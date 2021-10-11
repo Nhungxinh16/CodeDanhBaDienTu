@@ -36,7 +36,7 @@
                           <a class="nav-link active" aria-current="page" href="qldv.php">Quản lý Đơn Vị</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="#">Quản lý tài khoản</a>
+                          <a class="nav-link" href="qltk.php">Quản lý tài khoản</a>
                         </li>
 
                         
